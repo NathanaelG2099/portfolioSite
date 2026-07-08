@@ -1,17 +1,12 @@
-import React from "react";
 import "./global.css";
 
-type Navlink = {
-    label: string;
-    href: string;
-};
 
 interface TopbarProps {
     siteNameText?: string;
-    navLinks?: Navlink[];
+    navLinks?: {label: string; href: string;}[];
 }
 
-const Topbar: React.FC<TopbarProps> = ({
+export default function Topbar ({
     siteNameText = 'Nathanael Garcia : Portfolio',
     navLinks = [
         {label: 'Home', href: '/'},
@@ -19,27 +14,28 @@ const Topbar: React.FC<TopbarProps> = ({
         {label: 'Websites', href: '/websites'},
         {label: 'ML/AI Models', href: '/models'}
     ]
-}) => {
+}: TopbarProps) {
 
     return (
         <>
             {/* Topbar Container */}
-            <nav>
-                <div className="pt-3 pb-10 bg-cyan-500">
-                    {/* Left side: SiteName */}
+            <nav className="fixed top-o left-0 right-0">
+                <div className="pt-3 pb-8 pr-3 pl-3 bg-cyan-500">
+
+                    {/* Left side: Site Name */}
                     <div className="flex float-left">
-                    <a className="text-black">
+                    <a className="text-black font-serif">
                         {siteNameText}
                     </a>
                     </div>
 
-                    {/* Center: Desktop Navigation Links */}
+                    {/* Right side: Navigation Links */}
                     <div className="flex float-right gap-5">
                         {navLinks.map((link) => (
                             <a
                             key={link.label}
                             href={link.href}
-                            className="text-black hover:text-gray-600 font-medium transition-colors"
+                            className="text-black hover:text-gray-600 font-medium transition-colors font-serif"
                             >
                             {link.label}
                             </a>
@@ -49,9 +45,8 @@ const Topbar: React.FC<TopbarProps> = ({
             </nav>
 
             {/* Spacer to prevent fixed topbar from overlaying main content */}
-            <div className="h-5"></div>
+            <div className="h-10"></div>
         </>
     );
 };
 
-export default Topbar;
