@@ -7,7 +7,7 @@ interface TopbarProps {
 }
 
 export default function Topbar ({
-    siteNameText = 'Nathanael Garcia : Portfolio',
+    siteNameText = 'Nathanael Garcia',
     navLinks = [
         {label: 'Home', href: '/'},
         {label: 'Applications', href: '/apps'},
@@ -20,11 +20,11 @@ export default function Topbar ({
         <>
             {/* Topbar Container */}
             <nav className="fixed top-o left-0 right-0">
-                <div className="pt-3 pb-8 pr-3 pl-3 bg-cyan-500">
+                <div className="pt-3 pb-11 pr-3 pl-3 bg-cyan-500">
 
                     {/* Left side: Site Name */}
                     <div className="flex float-left">
-                    <a className="text-black font-serif">
+                    <a className="text-black text-2xl font-serif">
                         {siteNameText}
                     </a>
                     </div>
@@ -35,7 +35,7 @@ export default function Topbar ({
                             <a
                             key={link.label}
                             href={link.href}
-                            className="text-black hover:text-gray-600 font-medium transition-colors font-serif"
+                            className="text-black text-2xl underline hover:text-gray-600 font-medium transition-colors font-serif"
                             >
                             {link.label}
                             </a>
