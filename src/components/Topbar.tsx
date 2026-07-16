@@ -45,7 +45,7 @@ export default function Topbar ({
             </nav>
 
             {/* Spacer to prevent fixed topbar from overlaying main content */}
-            <div className="h-14"></div>
+            <div className="h-10"></div>
         </>
     );
 };
