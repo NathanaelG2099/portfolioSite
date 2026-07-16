@@ -49,6 +49,22 @@ const Home = () => {
           <p className="text-base md:text-2xl text-slate-400 leading-relaxed">
             A computer programmer based in Porterville, CA. Feel free to look around!
           </p>
+
+          <p className="text-5xl pt-40 font-bold">
+            Contact
+          </p>
+          <p className="pl-10">
+            Email: 
+            <a href="mailto:nathanaelg2099@gmail.com" className="text-cyan-500 hover:text-cyan-400 transition-colors pl-1">
+              nathanaelg2099@gmail.com
+            </a>
+          </p>
+          <p className="pl-10">
+            Phone: 
+            <a href="tel:+5593102811" className="text-cyan-500 hover:text-cyan-400 transition-colors pl-1">
+              +1 (559) 310-2811
+            </a>
+          </p>
         </div>
 
       </div>
